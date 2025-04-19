@@ -15,6 +15,15 @@
     align-items: center;
 }
 
+
+.column{
+    flex-direction: column;
+}
+
+.center{
+    justify-content: center;
+}
+
 .space-between{
     justify-content: space-between;
 }
@@ -60,4 +69,117 @@ a{
 .header-login-btn:hover{
     background-color: #efe5ff;
     border-color: #efe5ff;
+}
+
+
+/* Introduction Section */
+
+.introduction-container{
+    position:relative;
+}
+
+.introduction-left-img{
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+
+.introduction-right-img{
+    position:absolute;
+    top:0px;
+    right:0px;
+}
+
+.introduction-text-container{
+    gap:10px;
+    margin-left: 254px;
+    margin-right: 254px;
+    position: absolute;
+    top: 100px
+}
+
+.text-above{
+    font-weight: 500;
+    font-size: 38px;
+    font-family: Rubik, sans-serif;
+}
+
+.purple{
+    color:#ae7dd9;
+    font-weight: bold;
+}
+
+.title{
+    letter-spacing: -1px;
+    font-family: Rubik, sans-serif;
+    font-weight: 600;
+    line-height: 1.19118;
+    font-size: 72px;
+    text-align: center;
+}
+
+.small-text{
+    color:#666;
+    font-family: Quicksand, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.36364;
+}
+
+.divider-line{
+    background-color: #09090933;
+    font-weight: 100;
+    width: 100%;
+    height: 1px;
+    margin-top: 22px;
+    margin-bottom: 22px;
+}
+
+.paragraph-text{
+    color: #090909;
+    font-family: Quicksand, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.36364;
+    text-align: center;
+}
+
+.intro-buttons-container{
+    gap:8px;
+    margin-top:20px
+}
+
+.intro-buttons-container button{
+    border-radius: 8px;
+    padding: 16px 20px;
+    text-decoration: none;
+    border-width: 0;
+    font-family: Quicksand, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.intro-login-btn{
+    color: #fff;
+    background-color: #8854c0;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px #6c4298;
+}
+
+.intro-signup-btn{
+    color: #5d2057;
+    background-color: #f2f2f2;
+    min-width: 200px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px #ccc;
+}
+
+.intro-login-btn:hover{
+    transform: translateY(6px);
+    box-shadow: 0 0 #6c4298;
+}
+
+.intro-signup-btn:hover{
+    box-shadow: none;
+    transform: translateY(6px);
 }
