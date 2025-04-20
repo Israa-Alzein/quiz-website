@@ -20,7 +20,9 @@
     <main class="flex center">
         <div class="login-container flex space-between">
             <div class="login-form-container flex column center">
-                <h3> Welcome Back!</h3>
+                <h3> Welcome to Quizzing!</h3>
+                <span class="sub-text">Create a free account </span>
+
                 <form class="flex column">
                     <div class="form-username flex">
                         <img src="./../assets/icons/icons8-email-50.png">
@@ -31,6 +33,20 @@
                         <img src="./../assets/icons/icons8-password-50.png">
                         <label> Password</label>
                         <input type="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="form-gender flex">
+                        <img src="./../assets/icons/people.png">
+                        <label> Gender </label>
+                        <label class="custom-radio flex center">
+                            <input type="radio" name="gender" value="female" required>
+                            <span class="radio-style"></span>
+                            Female
+                        </label>
+                        <label class="custom-radio">
+                            <input type="radio" name="gender" value="male" required>
+                            <span class="radio-style"></span>
+                            Male
+                        </label>
                     </div>
                     <button type="submit">Register</button>
                 </form>
