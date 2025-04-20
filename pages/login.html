@@ -3,9 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login to access your Quizzes</title>
+    <link rel="stylesheet" href="./../styles/login.css">
 </head>
 <body>
-    
+    <header>
+        <div class="header-logo-nav-container flex space-between">
+            <a href="./../index.html">
+                <img class="header-logo" src="./../assets/images/Q.png">
+            </a>
+            <a href="./signup.html">
+                <button class="header-signup-btn"> Sign up</button>
+            </a>
+        </div>
+    </header>
+    <main class="flex center">
+        <div class="login-container flex space-between">
+            <div class="login-form-container flex column center">
+                <h3> Welcome Back!</h3>
+                <form class="flex column">
+                    <div class="form-username flex">
+                        <img src="./../assets/icons/icons8-email-50.png">
+                        <label> Username </label>
+                        <input type="text" name="username" placeholder="Enter your username" required>
+                    </div>
+                    <div class="form-password flex">
+                        <img src="./../assets/icons/icons8-password-50.png">
+                        <label> Password</label>
+                        <input type="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+            <div class="login-image-container">
+                <div class="login-image-text flex column">
+                    <span bold> Students love us &#128525; </span>
+                    <soan class="gray">Join over 200 million students and learners on Quizzer</soan>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
 </body>
 </html>
