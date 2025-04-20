@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:#461a42
+}
+
+.header-logo-nav-container{
+    padding-top:10px;
+    padding-bottom: 10px;
+    margin-left: 18.969px;
+    margin-right: 18.979px;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+
+.column{
+    flex-direction: column;
+}
+
+.center{
+    justify-content: center;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
+.header-logo{
+    width:150px
+}
+
+a{
+    text-decoration: none;
+}
+
+.header-signup-btn{
+    color:#461a42;
+    padding: 10px 14px 10px 12px;
+    border: 2px solid #fff;
+    background-color: #fff;
+    font-family:Quicksand, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+.header-signup-btn:hover{
+    background-color: #f6f0ff;
+    border-color: #f6f0ff;
+}
+
+
+/* main login */
+
+main{
+    height: 80vh;
+}
+
+.login-container{
+    background-color: #fff;
+}
+
+.login-form-container{
+    padding:10px 20px
+}
+
+.login-form-container h3{
+    font-weight: 500;
+    font-size: 38px;
+    font-family: Rubik, sans-serif;
+    color:#461a42;
+    margin: 20px 20px 40px 20px
+}
+
+form{
+    gap:30px
+}
+
+label{
+    font-size:20px
+}
+
+.form-username, .form-password{
+    gap:20px
+}
+
+input {
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1.5px solid #ccc;
+    background-color: #fff;
+    font-size: 15px;
+    color: #333;
+    width: 100%;
+    border-color:#f6f0ff;
+    box-shadow: 0 0 0 3px rgba(70, 26, 66, 0.2);
+    outline: none;
+}
+
+form button{
+    color:#fff;
+    padding: 10px 14px 10px 12px;
+    margin-top:20px; 
+    margin-bottom: 20px;
+    border: 2px solid #461a42;
+    background-color: #461a42;
+    font-family:Quicksand, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+form button:hover{
+    box-shadow: none;
+    transform: translateY(6px);
+    background-color: #6c2867;
+}
+
+form img{
+    width:40px
+}
+
+.login-image-container{
+    background-image: url(./../assets/images/classroom-enjoyment_optim.webp);
+    width:308px;
+    height:470px;
+    position:relative;
+}
+
+.login-image-text{
+    align-items: flex-start;
+    gap:10px;
+    padding: 10px 30px 20px 10px;
+    position:absolute;
+    bottom:0;
+    right:0;
+    background-color: #090909cc;
+    color: #fff;
+    
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.gray{
+    color:#fffc
+}
