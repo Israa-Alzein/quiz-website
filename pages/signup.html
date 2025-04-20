@@ -23,16 +23,16 @@
                 <h3> Welcome to Quizzing!</h3>
                 <span class="sub-text">Create a free account </span>
 
-                <form class="flex column">
-                    <div class="form-username flex">
+                <form id="signupForm" class="flex column">
+                    <div class="form-username flex" >
                         <img src="./../assets/icons/icons8-email-50.png">
                         <label> Username </label>
-                        <input type="text" name="username" placeholder="Enter your username" required>
+                        <input type="text" name="username"  id="usernameTxt" placeholder="Enter your username" required>
                     </div>
                     <div class="form-password flex">
                         <img src="./../assets/icons/icons8-password-50.png">
                         <label> Password</label>
-                        <input type="password" name="password" placeholder="Enter your password" required>
+                        <input type="password" name="password" id="passwordTxt" placeholder="Enter your password" required>
                     </div>
                     <div class="form-gender flex">
                         <img src="./../assets/icons/people.png">
@@ -48,7 +48,7 @@
                             Male
                         </label>
                     </div>
-                    <button type="submit">Register</button>
+                    <button type="submit" id="submitBtn">Register</button>
                 </form>
             </div>
             <div class="login-image-container">
@@ -61,5 +61,6 @@
         </div>
 
     </main>
+    <script src="./../scripts/signup.js"></script>
 </body>
 </html>
