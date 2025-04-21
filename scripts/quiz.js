@@ -430,7 +430,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const username = currentUser.username;
             const gender = currentUser.gender;
             const finalscore = score;
-            const quiz = questions
+            const quiz = selectedTopic
             
 
             const result = {
@@ -457,26 +457,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
-
-
-//create user result local storage
-// Save user result in localStorage
-
-const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-
-const username = currentUser.username;
-const gender = currentUser.gender;
-const userScore = finalscore;
-
-
-const result = {
-    username: username,
-    gender: gender,
-    score: score,
-    userIcon: userIcon
-};
-
-const userResults = JSON.parse(localStorage.getItem("userResults")) || [];
-userResults.push(result);
-localStorage.setItem("userResults", JSON.stringify(userResults));
-

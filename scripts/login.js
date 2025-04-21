@@ -6,7 +6,13 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     
     let existingUsers = JSON.parse(localStorage.getItem("users")) || [];
 
-    const adminUser = JSON.parse(localStorage.getItem("adminUser"));
+    const adminUser = {
+        name: "admin",
+        password: "123"
+    };
+    
+    localStorage.setItem("adminUser", JSON.stringify(adminUser));
+
 
     //using find to get admin user object if it already exist
     if (adminUser && username === adminUser.name && password === adminUser.password) {
