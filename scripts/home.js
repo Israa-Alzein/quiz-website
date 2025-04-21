@@ -215,3 +215,63 @@ localStorage.setItem("backToSchool", JSON.stringify(backToSchoolData));
 
 
 
+
+document.addEventListener("DOMContentLoaded", () => {
+    const sectionMap = {
+        algebra: document.getElementById("algebra-section"),
+        geometry: document.getElementById("geometry-section"),
+        grammar: document.getElementById("grammar-section"),
+        vocabulary: document.getElementById("vocabulary-section"),
+        backToSchool: document.getElementById("backToSchool-section")
+    };
+
+    for (let sectionName in sectionMap) {
+        const container = sectionMap[sectionName];
+        const sectionData = JSON.parse(localStorage.getItem(sectionName)) || [];
+    
+        sectionData.forEach((item, index) => {
+            const card = createCard(item, index === 0, sectionName);
+            container.appendChild(card);
+        });
+    }
+});
+
+
+
+function createCard(item, isFirst = false, sectionName = "") {
+    let card = document.createElement("div");
+
+    // Handle the "back to school" special style
+    if (sectionName === "backToSchool") {
+    card.className = "content-card-backtoschool";
+    } else if (isFirst) {
+    card.className = "content-card-1st flex column center";
+    } else {
+    card.className = "content-card";
+    }
+
+    // Image
+    const img = document.createElement("img");
+    img.src = item.image;
+
+    // Title + Description
+    const titleContainer = document.createElement("div");
+    titleContainer.className = "content-title-container flex column center";
+
+    const title = document.createElement("div");
+    title.className = "content-title";
+    title.textContent = item.title;
+
+    const desc = document.createElement("div");
+    desc.className = "content-description";
+    desc.textContent = item.description;
+
+    titleContainer.appendChild(title);
+    titleContainer.appendChild(desc);
+
+    // Final assembly
+    card.appendChild(img);
+    card.appendChild(titleContainer);
+
+    return card;
+}
