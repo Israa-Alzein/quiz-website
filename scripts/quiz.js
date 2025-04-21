@@ -1,7 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-
-    const allQuestions = {
+    const questionBox = document.getElementById("questionBox");
+    const questionNumber = document.getElementById("questionNumber");
+    const optionsForm = document.getElementById("optionsForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const doneBtn = document.getElementById("doneBtn");
+    const scoreHeader = document.getElementById("scoreHeader");
+    const streakHeader = document.getElementById("streakHeader");
+    const selectedTopic = localStorage.getItem("selectedTopic");
+    const allQuestions = JSON.parse(localStorage.getItem("allQuestions")) || {
         "Algebric expressions": [
             {
                 text: "What is the value of 3x + 2 when x = 4?",
@@ -258,271 +264,169 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         ],
         "All about me": [
-        {
-            text: "What is something you can share about yourself on the first day of school?",
-            options: ["Your favorite subject", "Your phone password", "Your parents' jobs"],
-            answer: "Your favorite subject"
-        },
-        {
-            text: "What is a good way to introduce yourself to classmates?",
-            options: ["Stay silent", "Say your name and one fun fact", "Only talk to the teacher"],
-            answer: "Say your name and one fun fact"
-        },
-        {
-            text: "Why is it important to tell others about your hobbies?",
-            options: ["To show off", "To make friends with similar interests", "To get better grades"],
-            answer: "To make friends with similar interests"
-        }
+            {
+                text: "What is something you can share about yourself on the first day of school?",
+                options: ["Your favorite subject", "Your phone password", "Your parents' jobs"],
+                answer: "Your favorite subject"
+            },
+            {
+                text: "What is a good way to introduce yourself to classmates?",
+                options: ["Stay silent", "Say your name and one fun fact", "Only talk to the teacher"],
+                answer: "Say your name and one fun fact"
+            },
+            {
+                text: "Why is it important to tell others about your hobbies?",
+                options: ["To show off", "To make friends with similar interests", "To get better grades"],
+                answer: "To make friends with similar interests"
+            }
         ],
         "Pronouncing Names Correctly": [
-        {
-            text: "Why should we try to say everyone's name correctly?",
-            options: ["To be respectful", "To avoid learning names", "To shorten them"],
-            answer: "To be respectful"
-        },
-        {
-            text: "What should you do if you’re unsure how to say someone’s name?",
-            options: ["Avoid saying it", "Guess loudly", "Politely ask them"],
-            answer: "Politely ask them"
-        },
-        {
-            text: "What can mispronouncing someone’s name lead to?",
-            options: ["Stronger friendships", "Confusion or disrespect", "Nothing at all"],
-            answer: "Confusion or disrespect"
-        }
+            {
+                text: "Why should we try to say everyone's name correctly?",
+                options: ["To be respectful", "To avoid learning names", "To shorten them"],
+                answer: "To be respectful"
+            },
+            {
+                text: "What should you do if you’re unsure how to say someone’s name?",
+                options: ["Avoid saying it", "Guess loudly", "Politely ask them"],
+                answer: "Politely ask them"
+            },
+            {
+                text: "What can mispronouncing someone’s name lead to?",
+                options: ["Stronger friendships", "Confusion or disrespect", "Nothing at all"],
+                answer: "Confusion or disrespect"
+            }
         ],
         "How to Email your Teacher": [
-        {
-            text: "What should your email to a teacher always include?",
-            options: ["A greeting, body, and signature", "Memes", "Just a question"],
-            answer: "A greeting, body, and signature"
-        },
-        {
-            text: "What’s a good way to start an email to your teacher?",
-            options: ["Hey!", "Yo teach!", "Dear Mr./Ms. [Last Name]"],
-            answer: "Dear Mr./Ms. [Last Name]"
-        },
-        {
-            text: "Why is it important to use proper grammar in your emails?",
-            options: ["To sound serious and respectful", "To be funny", "To confuse them"],
-            answer: "To sound serious and respectful"
-        }
+            {
+                text: "What should your email to a teacher always include?",
+                options: ["A greeting, body, and signature", "Memes", "Just a question"],
+                answer: "A greeting, body, and signature"
+            },
+            {
+                text: "What’s a good way to start an email to your teacher?",
+                options: ["Hey!", "Yo teach!", "Dear Mr./Ms. [Last Name]"],
+                answer: "Dear Mr./Ms. [Last Name]"
+            },
+            {
+                text: "Why is it important to use proper grammar in your emails?",
+                options: ["To sound serious and respectful", "To be funny", "To confuse them"],
+                answer: "To sound serious and respectful"
+            }
         ],
         "Setting Goals for the Year": [
-        {
-            text: "What is an academic goal you might set for the year?",
-            options: ["Make new friends", "Improve math grades", "Eat more snacks"],
-            answer: "Improve math grades"
-        },
-        {
-            text: "How can you track your goals?",
-            options: ["Ignore them", "Write them down and check progress", "Wish for the best"],
-            answer: "Write them down and check progress"
-        },
-        {
-            text: "Why is it good to set personal goals?",
-            options: ["To feel proud and stay focused", "To get extra homework", "To skip class"],
-            answer: "To feel proud and stay focused"
-        }
+            {
+                text: "What is an academic goal you might set for the year?",
+                options: ["Make new friends", "Improve math grades", "Eat more snacks"],
+                answer: "Improve math grades"
+            },
+            {
+                text: "How can you track your goals?",
+                options: ["Ignore them", "Write them down and check progress", "Wish for the best"],
+                answer: "Write them down and check progress"
+            },
+            {
+                text: "Why is it good to set personal goals?",
+                options: ["To feel proud and stay focused", "To get extra homework", "To skip class"],
+                answer: "To feel proud and stay focused"
+            }
         ],
         "Time Management": [
-        {
-            text: "What is one strategy for managing your time?",
-            options: ["Procrastinate", "Use a planner or calendar", "Avoid homework"],
-            answer: "Use a planner or calendar"
-        },
-        {
-            text: "Why is managing your time important?",
-            options: ["So you can get more sleep", "So you miss assignments", "So you forget less"],
-            answer: "So you can get more sleep"
-        },
-        {
-            text: "When should you start big projects?",
-            options: ["Right before the deadline", "As soon as they're assigned", "Never"],
-            answer: "As soon as they're assigned"
-        }
-    ]
+            {
+                text: "What is one strategy for managing your time?",
+                options: ["Procrastinate", "Use a planner or calendar", "Avoid homework"],
+                answer: "Use a planner or calendar"
+            },
+            {
+                text: "Why is managing your time important?",
+                options: ["So you can get more sleep", "So you miss assignments", "So you forget less"],
+                answer: "So you can get more sleep"
+            },
+            {
+                text: "When should you start big projects?",
+                options: ["Right before the deadline", "As soon as they're assigned", "Never"],
+                answer: "As soon as they're assigned"
+            }
+        ]
 
-    };
+    };;
+    const questions = allQuestions[selectedTopic] || [];
+
+    let currentQuestion = 0;
+    let score = 0;
+    let streak = 0;
 
     localStorage.setItem("allQuestions", JSON.stringify(allQuestions));
 
-    
-    
-
-    // const selectedTopic = localStorage.getItem("selectedTopic");
-
-
-
-    // let currentQuestion = 0;
-    // let score = 0;
-    // let streak = 0;
-
-    // const questionBox = document.getElementById("questionBox");
-    // const questionNumber = document.getElementById("questionNumber");
-    // const optionsForm = document.getElementById("optionsForm");
-    // const submitBtn = document.getElementById("submitBtn");
-    // const scoreHeader = document.getElementById("scoreHeader");
-    // const streakHeader = document.getElementById("streakHeader");
-
-    // function loadQuestion() {
-    //     const q = questions[currentQuestion];
-
-    //     questionNumber.textContent = `${currentQuestion + 1}/3`;
-    //     questionBox.innerHTML = `<p>${q.text}</p>`;
-
-    //     optionsForm.innerHTML = "";
-
-    //     q.options.forEach((option, index) => {
-        
-    //     const label = document.createElement("label");
-    //     label.className = "option-box";
-
-    //     const input = document.createElement("input");
-    //     input.type = "radio";
-    //     input.name = "answer";
-    //     input.value = option;
-    //     input.required = true;
-
-    //     label.appendChild(input);
-    //     label.appendChild(document.createTextNode(option));
-    //     optionsForm.appendChild(label);
-    //     });
-    // }
-
-    // submitBtn.addEventListener("click", (e) => {
-    //     e.preventDefault();
-
-    //     const selected = document.querySelector('input[name="answer"]:checked');
-    //     if (!selected) {
-    //     alert("Please select an answer!");
-    //     return;
-    //     }
-
-    //     const answer = selected.value;
-    //     const correct = questions[currentQuestion].answer;
-
-    //     if (answer === correct) {
-    //     score += 10;
-    //     streak += 1;
-    //     } else {
-    //     streak = 0;
-    //     }
-
-    //     currentQuestion++;
-
-    //     // Update headers
-    //     scoreHeader.textContent = `${score} / 30`;
-    //     streakHeader.textContent = streak;
-
-    //     if (currentQuestion < questions.length) {
-    //     loadQuestion();
-    //     } else {
-    //         questionBox.innerHTML = `<p>🎉 Quiz Completed!</p>`;
-    //         optionsForm.innerHTML = "";
-    //         questionNumber.textContent = "";
-    //         submitBtn.style.display = "none";
-    //         doneBtn.style.display = "inline-block";
-
-    //         doneBtn.addEventListener("click", () => {
-    //             window.location.href = "./../pages/home.html";
-    //         });
-    //     }
-    // });
-
-    // // Start
-    // loadQuestion();
+    if (questions.length === 0) {
+        alert("No questions found for this topic.");
+        return;
+    }
 
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const selectedTopic = localStorage.getItem("selectedTopic");
-        const allQuestions = JSON.parse(localStorage.getItem("allQuestions")) || {};
-    
-        const questions = allQuestions[selectedTopic] || [];
-    
-        if (questions.length === 0) {
-            alert("No questions found for this topic.");
+    function loadQuestion() {
+        const q = questions[currentQuestion];
+
+        questionNumber.textContent = `${currentQuestion + 1} / ${questions.length}`;
+        questionBox.innerHTML = `<p>${q.text}</p>`;
+        optionsForm.innerHTML = "";
+
+        q.options.forEach((option) => {
+            const label = document.createElement("label");
+            label.className = "option-box";
+
+            const input = document.createElement("input");
+            input.type = "radio";
+            input.name = "answer";
+            input.value = option;
+            input.required = true;
+
+            label.appendChild(input);
+            label.appendChild(document.createTextNode(option));
+            optionsForm.appendChild(label);
+        });
+    }
+
+    submitBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const selected = document.querySelector('input[name="answer"]:checked');
+        if (!selected) {
+            alert("Please select an answer!");
             return;
         }
-    
-        let currentQuestion = 0;
-        let score = 0;
-        let streak = 0;
-    
-        const questionBox = document.getElementById("questionBox");
-        const questionNumber = document.getElementById("questionNumber");
-        const optionsForm = document.getElementById("optionsForm");
-        const submitBtn = document.getElementById("submitBtn");
-        const doneBtn = document.getElementById("doneBtn");
-        const scoreHeader = document.getElementById("scoreHeader");
-        const streakHeader = document.getElementById("streakHeader");
-    
-        function loadQuestion() {
-            const q = questions[currentQuestion];
-    
-            questionNumber.textContent = `${currentQuestion + 1} / ${questions.length}`;
-            questionBox.innerHTML = `<p>${q.text}</p>`;
+
+        const answer = selected.value;
+        const correct = questions[currentQuestion].answer;
+
+        if (answer === correct) {
+            score += 10;
+            streak += 1;
+        } else {
+            streak = 0;
+        }
+
+        currentQuestion++;
+
+        scoreHeader.textContent = `${score} / ${questions.length * 10}`;
+        streakHeader.textContent = streak;
+
+        if (currentQuestion < questions.length) {
+            loadQuestion();
+        } else {
+            questionBox.innerHTML = `<p>🎉 Quiz Completed!</p>`;
             optionsForm.innerHTML = "";
-    
-            q.options.forEach((option) => {
-                const label = document.createElement("label");
-                label.className = "option-box";
-    
-                const input = document.createElement("input");
-                input.type = "radio";
-                input.name = "answer";
-                input.value = option;
-                input.required = true;
-    
-                label.appendChild(input);
-                label.appendChild(document.createTextNode(option));
-                optionsForm.appendChild(label);
+            questionNumber.textContent = "";
+            submitBtn.style.display = "none";
+            doneBtn.style.display = "inline-block";
+
+            doneBtn.addEventListener("click", () => {
+                window.location.href = "./../pages/home.html";
             });
         }
-    
-        submitBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-    
-            const selected = document.querySelector('input[name="answer"]:checked');
-            if (!selected) {
-                alert("Please select an answer!");
-                return;
-            }
-    
-            const answer = selected.value;
-            const correct = questions[currentQuestion].answer;
-    
-            if (answer === correct) {
-                score += 10;
-                streak += 1;
-            } else {
-                streak = 0;
-            }
-    
-            currentQuestion++;
-    
-            scoreHeader.textContent = `${score} / ${questions.length * 10}`;
-            streakHeader.textContent = streak;
-    
-            if (currentQuestion < questions.length) {
-                loadQuestion();
-            } else {
-                questionBox.innerHTML = `<p>🎉 Quiz Completed!</p>`;
-                optionsForm.innerHTML = "";
-                questionNumber.textContent = "";
-                submitBtn.style.display = "none";
-                doneBtn.style.display = "inline-block";
-    
-                doneBtn.addEventListener("click", () => {
-                    window.location.href = "./../pages/home.html";
-                });
-            }
-        });
-    
-        loadQuestion();
     });
-    
+
+    loadQuestion();
 
 
-
-    });
+});

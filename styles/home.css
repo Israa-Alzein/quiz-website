@@ -89,8 +89,8 @@ header{
 }
 
 .logout-btn{
-    border-radius: 15px;
-    font-size: 18px;
+    border-radius: 8px;
+    font-size: 14px;
     padding:5px;
 }
 
@@ -154,10 +154,6 @@ a{
     color:#333333;
     height: 28px;
     width: 100px;
-}
-
-a:hover{
-    background-color:#ccc;
 }
 
 
