@@ -88,6 +88,11 @@ header{
     object-fit: contain; 
 }
 
+.logout-btn{
+    border-radius: 15px;
+    font-size: 18px;
+    padding:5px;
+}
 
 /* Search section */
 .search-container{

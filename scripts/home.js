@@ -43,3 +43,13 @@ window.onclick = function(event) {
         }
     }
 }
+
+
+//logging out
+
+const logout = document.getElementById("logout");
+logout.addEventListener("click", logOut);
+
+function logOut(){
+    window.location.href = "./../index.html";
+}
