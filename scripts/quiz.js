@@ -420,6 +420,33 @@ document.addEventListener("DOMContentLoaded", () => {
             submitBtn.style.display = "none";
             doneBtn.style.display = "inline-block";
 
+
+            
+            // Save user result in local Storage
+
+            const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+
+            const username = currentUser.username;
+            const gender = currentUser.gender;
+            const finalscore = score;
+            const quiz = questions
+            
+
+            const result = {
+                username: username,
+                gender: gender,
+                score: finalscore,
+                quiz:quiz
+            };
+
+            const userResults = JSON.parse(localStorage.getItem("userResults")) || [];
+            userResults.push(result);
+            localStorage.setItem("userResults", JSON.stringify(userResults));
+
+
+
+
             doneBtn.addEventListener("click", () => {
                 window.location.href = "./../pages/home.html";
             });
@@ -430,3 +457,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
+
+//create user result local storage
+// Save user result in localStorage
+
+const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+const username = currentUser.username;
+const gender = currentUser.gender;
+const userScore = finalscore;
+
+
+const result = {
+    username: username,
+    gender: gender,
+    score: score,
+    userIcon: userIcon
+};
+
+const userResults = JSON.parse(localStorage.getItem("userResults")) || [];
+userResults.push(result);
+localStorage.setItem("userResults", JSON.stringify(userResults));
+
