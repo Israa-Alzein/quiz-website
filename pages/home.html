@@ -10,10 +10,21 @@
     <header class="flex space-between">
         <img class="header-logo" src="./../assets/images/logo.png">
         
-            <button class="profile-button flex space-between">
+        <div class="dropdown-btn-container">
+            <button id="profileBtn" class="profile-button flex space-between">
                 <img id="profileImg" class="header-profile-icon" src="./../assets/icons/icons8-male-user-48.png">
                 <img class="header-arrow-icon" src="./../assets/icons/icons8-arrow-down-50.png">
             </button>
+            <div id="myDropdown" class="dropdown-content flex column ">
+                <div class="prof-usrnme-container flex space-between ">
+                    <img id="prof" class="header-profile-icon" src="./../assets/icons/icons8-male-user-48.png">
+                    <span id="usrnme"></span>
+                </div>
+                
+                <button> Log out</button>
+            </div>
+        </div>
+            
     </header>
     <section class="search-container flex column center">
         <span class="header-search"> What are you learning today?</span>
