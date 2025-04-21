@@ -27,6 +27,9 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
 
         localStorage.setItem("users", JSON.stringify(existingUsers));
 
+        //I will use it later for the home page so I stored the recent user value in another key
+        localStorage.setItem("currentUser", JSON.stringify(newUser));
+
         window.location.href = "./../pages/home.html";
     }
 
