@@ -21,16 +21,16 @@
         <div class="login-container flex space-between">
             <div class="login-form-container flex column center">
                 <h3> Welcome Back!</h3>
-                <form class="flex column">
+                <form id="loginForm" class="flex column">
                     <div class="form-username flex">
                         <img src="./../assets/icons/icons8-email-50.png">
                         <label> Username </label>
-                        <input type="text" name="username" placeholder="Enter your username" required>
+                        <input type="text" name="username" id="userTxt" placeholder="Enter your username" required>
                     </div>
                     <div class="form-password flex">
                         <img src="./../assets/icons/icons8-password-50.png">
                         <label> Password</label>
-                        <input type="password" name="password" placeholder="Enter your password" required>
+                        <input type="password" name="password" id="passTxt" placeholder="Enter your password" required>
                     </div>
                     <button type="submit">Login</button>
                 </form>
@@ -45,5 +45,6 @@
         </div>
 
     </main>
+    <script src="./../scripts/login.js"></script>
 </body>
 </html>
