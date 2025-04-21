@@ -1,54 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solving the Quiz - Quizzing</title>
-    <link rel="stylesheet" href="./../styles/quiz.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Solving the Quiz - Quizzing</title>
+<link rel="stylesheet" href="./../styles/quiz.css"/>
 </head>
 <body>
-    <header class="flex space-between">
-        <div class="header-rank flex">
-            <img src="./../assets/icons/icons8-medal-50.png">
-            <span> 1 </span>
-        </div>
-        <div class="header-streaks flex">
-            <img src="./../assets/icons/streak.png">
-            <span> 0 </span>
-        </div>
-        <div class="header-score flex center">
-            <span> Score: </span>
-            <span> 0 / 30 </span>
-        </div>
-    </header>
-    <main class="flex column center">
-        <div class="question-container flex column center">
-            <div class="question-nb flex center">
-                <span> 1 </span>
-                <span> / 3 </span>
-            </div>
-            <div class="question-box">
-                <p> Compare between the two numbers <br>  222 _ 333 </p>
-            </div>
-        </div>
-        <div class="answer-container flex space-evenly">
-            <form class="flex space-evenly">
-                <div class="solution-box flex center">
-                    <input type="radio" name="answer" id="answer" value="less">
-                    <label>less</label>
-                </div>
-                <div class="solution-box flex center">
-                    <input type="radio" name="answer" id="answer" value="equal">
-                    <label>equal</label> 
-                </div>
-                <div class="solution-box flex center">
-                    <input type="radio" name="answer" id="answer" value="greater">
-                    <label>greater</label> 
-                </div>
-                <input class="submit-btn" type="submit" name="submit" value="submit">
-                
-            </form>
-        </div>
-    </main>
+<header class="flex space-between">
+    <div class="header-rank flex">
+    <img src="./../assets/icons/icons8-medal-50.png" />
+    <span>1</span>
+    </div>
+    <div class="header-streaks flex">
+    <img src="./../assets/icons/streak.png" />
+    <span id="streakHeader">0</span>
+    </div>
+    <div class="header-score flex center">
+    <span>Score:</span>
+    <span id="scoreHeader">0 / 30</span>
+    </div>
+</header>
+
+<main class="flex column center">
+    <div class="question-container flex column center">
+    <div id="questionNumber" class="question-nb flex center">Q1</div>
+    <div id="questionBox" class="question-box"></div>
+    </div>
+
+    <!-- Dynamically generated options -->
+    <form id="optionsForm" class="answer-container flex space-evenly"></form>
+
+    <button id="submitBtn" class="submit-btn">Submit</button>
+
+    <button id="doneBtn" class="submit-btn" style="display: none;">Done</button>
+</main>
+
+<script src="./../scripts/quiz.js"></script>
 </body>
 </html>
