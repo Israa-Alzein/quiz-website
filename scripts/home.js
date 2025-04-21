@@ -67,7 +67,7 @@ const algebraData = [
     image: "./../assets/home-images/algebra.webp"
     },
     {
-    title: "Algebraic expressions",
+    title: "Algebric expressions",
     description: "Grade 10",
     image: "./../assets/home-images/eqtn-strt-line.webp"
     },
@@ -275,3 +275,143 @@ function createCard(item, isFirst = false, sectionName = "") {
 
     return card;
 }
+
+
+function createCard(item, isFirst = false, sectionName = "") {
+    let card = document.createElement("div");
+
+    // Handle the "back to school" special style
+    if (sectionName === "backToSchool") {
+        card.className = "content-card-backtoschool";
+    } else if (isFirst) {
+        card.className = "content-card-1st flex column center";
+    } else {
+        card.className = "content-card";
+    }
+
+    // Image
+    const img = document.createElement("img");
+    img.src = item.image;
+
+    // Title + Description
+    const titleContainer = document.createElement("div");
+    titleContainer.className = "content-title-container flex column center";
+
+    const title = document.createElement("div");
+    title.className = "content-title";
+    title.textContent = item.title;
+
+    const desc = document.createElement("div");
+    desc.className = "content-description";
+    desc.textContent = item.description;
+
+    titleContainer.appendChild(title);
+    titleContainer.appendChild(desc);
+
+    // Final assembly
+    card.appendChild(img);
+    card.appendChild(titleContainer);
+
+    //Add click functionality to all cards except the first summary card
+    if (!isFirst) {
+        card.style.cursor = "pointer";
+        card.addEventListener("click", () => {
+            localStorage.setItem("selectedTopic", item.title);
+            window.location.href = "./quiz.html";
+        });
+    }
+
+    // // Assuming you have a list of topics like this:
+    // const topics = [
+    //     "Algebric expressions",
+    //     "linear equations",
+    //     "equation straight lines",
+    //     "linear inequalities",
+    //     "Angles",
+    //     "Area",
+    //     "Basic Geometry",
+    //     "Circles",
+    //     "Grammar in Writing",
+    //     "Parts of Speech",
+    //     "Syntax",
+    //     "Word Relationships",
+    //     "Specialized Vocabulary",
+    //     "Parts of Speech",
+    //     "Spelling",
+    //     "All about me",
+    //     "Pronouncing Names Correctly",
+    //     "How to Email your Teacher",
+    //     "Setting Goals for the Year",
+    //     "Time Management",
+    // ];
+    
+    // // Select the container where the topics will be placed
+    // const container = document.querySelector(".items-container");
+    
+    // // Loop through the topics to create each clickable item
+    // topics.forEach((topic) => {
+    //     const item = document.createElement("div");
+    //     item.classList.add("item");
+    //     item.textContent = topic;
+    
+    //     // Add an event listener to store the selected topic in localStorage
+    //     item.addEventListener("click", () => {
+    //     localStorage.setItem("selectedTopic", topic);  // Store the selected topic
+    //     window.location.href = "quiz.html";  // Redirect to quiz page
+    //     });
+    
+    //     // Append the item to the container
+    //     container.appendChild(item);
+    //});
+  
+
+    return card;
+}
+
+
+
+
+
+// // Assuming you have a list of topics like this:
+// const topics = [
+//     "Algebric expressions",
+//     "linear equations",
+//     "equation straight lines",
+//     "linear inequalities",
+//     "Angles",
+//     "Area",
+//     "Basic Geometry",
+//     "Circles",
+//     "Grammar in Writing",
+//     "Parts of Speech",
+//     "Syntax",
+//     "Word Relationships",
+//     "Specialized Vocabulary",
+//     "Parts of Speech",
+//     "Spelling",
+//     "All about me",
+//     "Pronouncing Names Correctly",
+//     "How to Email your Teacher",
+//     "Setting Goals for the Year",
+//     "Time Management",
+//   ];
+  
+//   // Select the container where the topics will be placed
+//   const container = document.querySelector(".items-container");
+  
+//   // Loop through the topics to create each clickable item
+//   topics.forEach((topic) => {
+//     const item = document.createElement("div");
+//     item.classList.add("item");
+//     item.textContent = topic;
+  
+//     // Add an event listener to store the selected topic in localStorage
+//     item.addEventListener("click", () => {
+//       localStorage.setItem("selectedTopic", topic);  // Store the selected topic
+//       window.location.href = "quiz.html";  // Redirect to quiz page
+//     });
+  
+//     // Append the item to the container
+//     container.appendChild(item);
+//   });
+  
