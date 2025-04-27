@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const doneBtn = document.getElementById("doneBtn");
     const scoreHeader = document.getElementById("scoreHeader");
     const streakHeader = document.getElementById("streakHeader");
+    const rankHeader = document.getElementById("rankHeader");
     const selectedTopic = localStorage.getItem("selectedTopic");
     const allQuestions = JSON.parse(localStorage.getItem("allQuestions")) || {
         "Algebric expressions": [
@@ -355,6 +356,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentQuestion = 0;
     let score = 0;
     let streak = 0;
+    let rank = 4;
 
     localStorage.setItem("allQuestions", JSON.stringify(allQuestions));
 
@@ -402,6 +404,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (answer === correct) {
             score += 10;
             streak += 1;
+            rank -= 1;
         } else {
             streak = 0;
         }
@@ -410,6 +413,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         scoreHeader.textContent = `${score} / ${questions.length * 10}`;
         streakHeader.textContent = streak;
+        rankHeader.textContent = rank;
 
         if (currentQuestion < questions.length) {
             loadQuestion();
