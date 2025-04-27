@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzes Categories - Quizzing</title>
+    <link rel="stylesheet" href="./../styles/categories.css">
+</head>
+<body>
+    <header class="flex space-between">
+        <img class="header-logo" src="./../assets/images/logo.png">
+        
+        <div class="dropdown-btn-container">
+            <button id="profileBtn" class="profile-button flex space-between">
+                <img id="profileImg" class="header-profile-icon" src="./../assets/icons/icons8-male-user-48.png">
+                <img class="header-arrow-icon" src="./../assets/icons/icons8-arrow-down-50.png">
+            </button>
+            <div id="myDropdown" class="dropdown-content flex column ">
+                <div class="prof-usrnme-container flex space-between ">
+                    <img id="prof" class="header-profile-icon" src="./../assets/icons/icons8-male-user-48.png">
+                    <span id="usrnme"></span>
+                </div>
+                
+                <button id="logout" class="logout-btn"> Log out</button>
+            </div>
+        </div>
+            
+    </header>
+    <section class="search-container flex column center">
+        <span class="header-search"> What are you learning today?</span>
+        <form>
+            <div class="search flex">
+                <img class="search-icon" src="./../assets/icons/icons8-search-50.png">
+                <input class="search-input" type="search" name="search" id="search" placeholder="Search for any topic">
+                <img class="arrow-right" src="./../assets/icons/icons8-arrow-right-30.png">
+            </div>
+        </form>
+        <nav class="nav-container flex center">
+            <a href="./home.html" class="flex">
+                <img src="./../assets/icons/for-you.png">
+                <span>For you</span>
+            </a>
+            <a href="./categories.html" class="flex">
+                <img src="./../assets/icons/categories.png">
+                <span> Categories </span>
+            </a>
+            <a href="./home.html" class="flex">
+                <img src="./../assets/icons/dashboard.png">
+                <span>Dashboard</span>
+            </a>
+        </nav>
+    </section>
+    <main>
+        <div class="main-div-container">
+            <div class="main-title flex">
+                <img src="./../assets/icons/trend.png">
+                <span> Grade 7</span>
+            </div>
+            <div class="content-wrapper flex column">
+
+                <div id="grade7-section" class="content-container flex overflow"></div>
+            </div>
+            
+
+            <div class="main-title flex">
+                <img src="./../assets/icons/trend.png">
+                <span> Grade 8</span>
+            </div>
+            <div class="content-wrapper flex column">
+
+                <div id="grade8-section" class="content-container flex overflow"></div>
+            </div>
+
+            <div class="main-title flex">
+                <img src="./../assets/icons/trend.png">
+                <span> Grade 9</span>
+            </div>
+            <div class="content-wrapper flex column">
+
+                <div id="grade9-section" class="content-container flex overflow"></div>
+            </div>
+
+            <div class="main-title flex">
+                <img src="./../assets/icons/trend.png">
+                <span> Grade 10</span>
+            </div>
+            <div class="content-wrapper flex column">
+
+                <div id="grade10-section" class="content-container flex overflow"></div>
+            </div>
+
+            <div class="main-title flex">
+                <img src="./../assets/icons/trend.png">
+                <span> Grade 11</span>
+            </div>
+            <div class="content-wrapper flex column">
+
+                <div id="grade11-section" class="content-container flex overflow"></div>
+            </div>
+
+            <div class="main-title flex">
+                <img src="./../assets/icons/trend.png">
+                <span> Grade 12</span>
+            </div>
+            <div class="content-wrapper flex column">
+
+                <div id="grade12-section" class="content-container flex overflow"></div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="./../scripts/categories.js"></script>
+</body>
+</html>
