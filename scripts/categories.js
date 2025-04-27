@@ -57,7 +57,7 @@ function logOut(){
 
 
 
-//Storing cards data in local storage and then retrieve them
+//Retrieving cards data local storage
 
 const algebraData = JSON.parse(localStorage.getItem("algebra"));
 const geometryData = JSON.parse(localStorage.getItem("geometry"));

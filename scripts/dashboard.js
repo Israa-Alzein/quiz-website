@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const tableBody = document.getElementById("resultsTableBody"); // Make sure your HTML has a <tbody> with this ID
+    const tableBody = document.getElementById("resultsTableBody");
 
     const userResults = JSON.parse(localStorage.getItem("userResults")) || [];
 

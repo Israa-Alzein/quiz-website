@@ -103,45 +103,20 @@ header{
 }
 
 /* Search section */
-.search-container{
+.headernav-container{
     background-color:rgba(246,240,255);
     border-bottom: 1px solid #8854c066;
-    gap: 20px;
+    
     padding:40px 40px 0px 40px
 }
 
-.header-search{
+.header-title{
     font-family: Open Sans, sans-serif, Helvetica, Arial, Symbola;
     letter-spacing: -.015em;
     font-size: 1.27rem;
     line-height: 32px;
     font-weight: 600;
-}
-
-.search{
-    width:290px;
-    padding:12px;
-    border-radius: 30px;
-    background: #fff;
-    border: 1px solid #8854c066
-}
-
-.search-icon, .arrow-right{
-    width:20px
-}
-
-.search-input{
-    width:250px;
-    font-size: 16px;
-    font-family: 'lexend', sans-serif;
-    color:#333333;
-    margin-left:12px;
-    outline:none;
-    border: none;
-}
-
-.search-input::placeholder{
-    color:rgba(0,0,0,0.4)
+    text-align:center
 }
 
 
@@ -171,57 +146,34 @@ a{
 main{
     padding: 40px;
     background-color: rgba(0,0,0,0.05);
+    min-height:370px
 }
 
-.main-title{
-    justify-content: start;
-    gap:10px;
-    margin:20px
-}
-.main-title img{
-    width:25px;
-}
-
-.main-title span{
-    font-size:20px
+table{
+    width: 1000px;
+    background-color: #fff;
+    margin:30px auto;
+    border-radius:8px;
+    border-collapse: collapse
 }
 
-.content-wrapper{
-    gap:20px;
-    align-items:start;
-    margin-bottom:50px;
+tbody tr{
+    border-bottom: 1px solid #eef0f3
 }
 
-.content-container{
-    gap:20px;
-    width: 100%;
-    overflow: hidden;
+thead th{
+    font-size:14px;
+    text-transform: uppercase;
+    font-weight:400;
+    background-color:#f9fafb;
+    text-align:start;
+    padding:15px
 }
 
-.content-card{
-    width:180px;
-    height:180px;
-    background-color:#fff;
-    border-radius: 8px
+
+tbody td{
+    font-weight: 600;
+    font-size: 16px;
+    color:#787d8d;
+    padding: 10px 15px
 }
-
-.content-card img{
-    width:180px;
-    height:120px;
-    border-top-left-radius: 8px;
-    border-top-right-radius:8px;
-
-}
-
-.content-title-container{
-    gap:2px
-}
-
-.overflow{
-    overflow:hidden;
-    overflow-x: scroll;
-}
-
-.overflow::-webkit-scrollbar {
-    display: none;
-} 

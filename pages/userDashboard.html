@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> your Dashboard - Quizzing</title>
+    <link rel="stylesheet" href="./../styles/userDashboard.css">
+</head>
+<body>
+    <header class="flex space-between">
+        <img class="header-logo" src="./../assets/images/logo.png">
+        
+        <div class="dropdown-btn-container">
+            <button id="profileBtn" class="profile-button flex space-between">
+                <img id="profileImg" class="header-profile-icon" src="./../assets/icons/icons8-male-user-48.png">
+                <img class="header-arrow-icon" src="./../assets/icons/icons8-arrow-down-50.png">
+            </button>
+            <div id="myDropdown" class="dropdown-content flex column ">
+                <div class="prof-usrnme-container flex space-between ">
+                    <img id="prof" class="header-profile-icon" src="./../assets/icons/icons8-male-user-48.png">
+                    <span id="usrnme"></span>
+                </div>
+                
+                <button id="logout" class="logout-btn"> Log out</button>
+            </div>
+        </div>
+            
+    </header>
+    <section class="headernav-container flex column center">
+        <span class="header-title"> Keep going, You are improving! See it for yourself :) </span>
+        <nav class="nav-container flex center">
+            <a href="./home.html" class="flex">
+                <img src="./../assets/icons/for-you.png">
+                <span>For you</span>
+            </a>
+            <a href="./categories.html" class="flex">
+                <img src="./../assets/icons/categories.png">
+                <span> Categories </span>
+            </a>
+            <a href="#" class="flex">
+                <img src="./../assets/icons/dashboard.png">
+                <span>Dashboard</span>
+            </a>
+        </nav>
+    </section>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Quiz</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody id="resultsTableBody">
+            </tbody >
+        </table>
+    </main>
+
+    <script src="./../scripts/userDashboard.js"></script>
+</body>
+</html>
