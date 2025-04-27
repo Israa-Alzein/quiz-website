@@ -27,7 +27,7 @@ const profileButton = document.getElementById("profileBtn");
 profileButton.addEventListener("click", dropDown);
 
 function dropDown(event){
-    event.stopPropagation();
+    event.stopPropagation(); //I can click on anywhereinside the bottom the toggle will happen
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
@@ -47,7 +47,6 @@ window.onclick = function(event) {
 
 
 //logging out
-
 const logout = document.getElementById("logout");
 logout.addEventListener("click", logOut);
 
@@ -59,7 +58,7 @@ function logOut(){
 
 
 
-//SToring cards data in local storage and then retrieve them
+//Storing cards data in local storage and then retrieve them
 
 const algebraData = [
     {
@@ -238,44 +237,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
-function createCard(item, isFirst = false, sectionName = "") {
-    let card = document.createElement("div");
-
-    // Handle the "back to school" special style
-    if (sectionName === "backToSchool") {
-    card.className = "content-card-backtoschool";
-    } else if (isFirst) {
-    card.className = "content-card-1st flex column center";
-    } else {
-    card.className = "content-card";
-    }
-
-    // Image
-    const img = document.createElement("img");
-    img.src = item.image;
-
-    // Title + Description
-    const titleContainer = document.createElement("div");
-    titleContainer.className = "content-title-container flex column center";
-
-    const title = document.createElement("div");
-    title.className = "content-title";
-    title.textContent = item.title;
-
-    const desc = document.createElement("div");
-    desc.className = "content-description";
-    desc.textContent = item.description;
-
-    titleContainer.appendChild(title);
-    titleContainer.appendChild(desc);
-
-    // Final assembly
-    card.appendChild(img);
-    card.appendChild(titleContainer);
-
-    return card;
-}
 
 
 function createCard(item, isFirst = false, sectionName = "") {

@@ -59,7 +59,8 @@ header{
     display: none; 
     position:absolute;
     left:-30px;
-    background-color: #f1f1f1;
+    background-color: #fff;
+    color:#333333;
     padding:10px;
     width: 130px;
     height:150px;
@@ -73,7 +74,7 @@ header{
 }
 
 .prof-usrnme-container{
-    border-bottom: 1px solid #333333
+    border-bottom: 2px solid #e4e4e4;
 }
 
 .header-arrow-icon {
@@ -91,7 +92,14 @@ header{
 .logout-btn{
     border-radius: 8px;
     font-size: 14px;
+    font-family: Open Sans, sans-serif, Helvetica, Arial, Symbola;
+    background-color:rgba(246, 240, 255);
+    border: 1px solid #8854c066;
     padding:5px;
+}
+
+.logout-btn:hover{
+    background-color:rgb(240, 230, 255);;
 }
 
 /* Search section */

@@ -7,6 +7,10 @@ body{
     background-color:#828997
 }
 
+a{
+    text-decoration: none;
+}
+
 .flex{
     display:flex;
     gap:5px;
